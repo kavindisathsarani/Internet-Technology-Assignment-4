@@ -1,0 +1,116 @@
+body {
+  margin: 0;
+  width: 400%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  animation: slide 20s ease infinite;
+}
+
+.frame {
+  width: 25%;
+  height: 100%;
+  background-size: cover;
+}
+
+.frame1 {
+  background-image: url(/assests/images/istockphoto-645701346-612x612.jpg);
+}
+
+.frame2 {
+  background-image: url(/assests/images/hummingbird.jpg);
+}
+
+.frame3 {
+  background-image: url(/assests/images/kwl8d7.jpg);
+}
+
+.frame4 {
+  background-image: url(/assests/images/HD-wallpaper-minimal-whale-digital-art-design-animal.jpg);
+}
+
+/* Frame 1 (0% - 8%): Displayed for 1.6 seconds.
+Frame 2 (16% - 25%): Displayed for 1.8 seconds.
+Frame 3 (33% - 41%): Displayed for 1.6 seconds.
+Frame 4 (50% - 58%): Displayed for 1.6 seconds.
+Frame 3 (66% - 75%): Displayed again for 1.8 seconds.
+Frame 2 (83% - 91%): Displayed again for 1.8 seconds. */
+
+@keyframes slide {
+  0%,
+  100% {
+    transform: translateX(0%);
+  }
+
+  8% {
+    transform: translateX(0%);
+    /* 0.08 * 20 = 1.6 seconds.Total second is 20s. (8/100)*20 */
+    /* For the first 1.6 seconds, the first image is displayed without moving. */
+  }
+
+  16% {
+    transform: translateX(-25%);
+    /* 0.16 * 20 = 3.2 seconds. */
+    /* the second image slides into view */
+  }
+
+  25% {
+    transform: translateX(-25%);
+    /* 0.25 * 20 = 5 seconds.
+    The second image remains visible from 3.2 seconds to 5 seconds. */
+  }
+
+  33% {
+    transform: translateX(-50%);
+    /* The third image slides into view at 33% */
+    /*0.33 * 20 = 6.6 seconds.  */
+  }
+
+  41% {
+    transform: translateX(-50%);
+    /* The third image stays visible until 41% */
+    /* 0.41 * 20 = 8.2 seconds. */
+  }
+
+  50% {
+    transform: translateX(-75%);
+    /* The fourth image slides into view at 50%:
+     0.50 * 20 = 10 seconds. */
+  }
+
+  58% {
+    transform: translateX(-75%);
+    /* The fourth image remains in place until 58%:
+       0.58 * 20 = 11.6 seconds. */
+  }
+
+  66% {
+    transform: translateX(-50%);
+    /* The carousel moves back to the third image at 66%:
+       0.66 * 20 = 13.2 seconds. */
+  }
+
+  75% {
+    transform: translateX(-50%);
+    /*  The third image stays visible until 75%:
+        0.75 * 20 = 15 seconds. */
+  }
+
+  83% {
+    transform: translateX(-25%);
+    /* The carousel slides back to the second image at 83%:
+       0.83 * 20 = 16.6 seconds. */
+  }
+
+  91% {
+    transform: translateX(-25%);
+    /* The second image remains visible until 91%:
+       0.91 * 20 = 18.2 seconds. */
+  }
+}

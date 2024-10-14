@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.circle {
+  border-radius: 50%;
+  border: 2px solid red;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  animation: ripple 2s ease-in-out infinite;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes ripple {
+  0% {
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+  }
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+}
